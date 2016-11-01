@@ -94,6 +94,7 @@ console.assert(cat.growl() === "meow");
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
+/*
 class KeepSecret{
 	constructor(Secret){
 		this.secret = Secret;
@@ -102,6 +103,16 @@ class KeepSecret{
 		return this.secret;
 	}
 	
+}
+*/
+
+class KeepSecret {
+	constructor(Secret) {
+		var secret = Secret;
+		this.squeal = function() {
+			return secret;
+		}
+	}
 }
 
 
@@ -135,20 +146,19 @@ class Key{
 
 }
 class Safe{
-	constructor(data, Key){
-	this.key = Key;
-	this.data = data;
-}
-
-	unlock(key){
-			if (key === this.key) {
-				return this.data;
-			}
-
-			return false;
+	constructor(Data, Key){
+	var key  = Key;
+	var data = Data;
+	this.unlock = function(ikey){
+		if (key === ikey) {
+			return data;
+			} return false;
 		}
 	}
+}
+
 	
+
 
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
